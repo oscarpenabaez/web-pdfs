@@ -1,33 +1,241 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Descarga de PDFs</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 50px auto;
+    :root{
+      --azul:#0078D4;
+      --azul-osc:#005a9e;
+      --gris:#6b7280;
+      --fondo:#f6f8fb;
+      --card:#ffffff;
+      --borde:#e5e7eb;
     }
-    h1 {
-      color: #0078D4;
+
+    body{
+      font-family: Arial, sans-serif;
+      background: var(--fondo);
+      margin: 0;
+      padding: 40px 16px;
+      color:#111827;
+    }
+
+    .container{
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .header{
+      background: linear-gradient(135deg, var(--azul), #41b3ff);
+      color: white;
+      border-radius: 14px;
+      padding: 26px 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .header h1{
+      margin: 0 0 6px 0;
+      font-size: 28px;
+      letter-spacing: .2px;
+    }
+
+    .header p{
+      margin: 0;
+      opacity: .95;
+    }
+
+    .card{
+      margin-top: 18px;
+      background: var(--card);
+      border: 1px solid var(--borde);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,.05);
+    }
+
+    .card h2{
+      margin: 0 0 12px 0;
+      font-size: 18px;
+      color:#111827;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .pdf-item{
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      padding: 14px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pdf-title{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+    }
+
+    .icon{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #e8f3ff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size: 18px;
+      flex: 0 0 auto;
+    }
+
+    .pdf-title strong{
+      display:block;
+      font-size: 14.5px;
+      line-height: 1.25;
+    }
+
+    .pdf-title span{
+      display:block;
+      font-size: 12.5px;
+      color: var(--gris);
+      margin-top: 2px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: var(--azul);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid rgba(0,0,0,.04);
+      transition: .15s ease-in-out;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .btn:hover{
+      background: var(--azul-osc);
+      transform: translateY(-1px);
+    }
+
+    .footer{
+      margin-top: 14px;
+      color: var(--gris);
+      font-size: 12.5px;
+      text-align: center;
+    }
+
+    .note{
+      margin-top: 10px;
+      color: var(--gris);
+      font-size: 13px;
     }
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="header">
+      <h1>📄 Documentos disponibles</h1>
+      <p>Descarga los archivos en PDF de forma rápida y segura.</p>
+    </div>
 
-  <h1>📄 Documentos disponibles</h1>
-  <p>Próximamente encontrarás aquí los PDFs para descarga.</p>
+    <div class="card">
+      <h2>📂 Descargas</h2>
 
-<h2>📂 Documentos disponibles</h2>
+      <div class="grid">
 
-<ul>
-  <li>
-    <a href="https://pdfstorageoscar2026.blob.core.windows.net/pdfs/Analisis%20Financiero.pdf" target="_blank">
-      📄 Descargar Análisis Financiero (PDF)
-    </a>
-  </li>
-</ul>
+        <!-- PDF 1 (ya lo tienes) -->
+        <div class="pdf-item">
+          <div class="pdf-title">
+            <div class="icon">📘</div>
+            <div>
+              <strong>Análisis Financiero</strong>
+              <span>Archivo PDF</span>
+            </div>
+          </div>
+          <a class="btn" href="https://pdfstorageoscar2026.blob.core.windows.net/pdfs/Analisis%20Financiero.pdf" target="_blank">
+            ⬇️ Descargar
+          </a>
+        </div>
 
+        <!-- PDF 2 (cambia la URL y el nombre) -->
+        <div class="pdf-item">
+          <div class="pdf-title">
+            <div class="icon">📄</div>
+            <div>
+              <strong>Documento 2</strong>
+              <span>Archivo PDF</span>
+            </div>
+          </div>
+          <a class="btn" href="PON_AQUI_LA_URL_DEL_PDF_2" target="_blank">
+            ⬇️ Descargar
+          </a>
+        </div>
+
+        <!-- PDF 3 -->
+        <div class="pdf-item">
+          <div class="pdf-title">
+            <div class="icon">📄</div>
+            <div>
+              <strong>Documento 3</strong>
+              <span>Archivo PDF</span>
+            </div>
+          </div>
+          <a class="btn" href="PON_AQUI_LA_URL_DEL_PDF_3" target="_blank">
+            ⬇️ Descargar
+          </a>
+        </div>
+
+        <!-- PDF 4 -->
+        <div class="pdf-item">
+          <div class="pdf-title">
+            <div class="icon">📄</div>
+            <div>
+              <strong>Documento 4</strong>
+              <span>Archivo PDF</span>
+            </div>
+          </div>
+          <a class="btn" href="PON_AQUI_LA_URL_DEL_PDF_4" target="_blank">
+            ⬇️ Descargar
+          </a>
+        </div>
+
+        <!-- PDF 5 -->
+        <div class="pdf-item">
+          <div class="pdf-title">
+            <div class="icon">📄</div>
+            <div>
+              <strong>Documento 5</strong>
+              <span>Archivo PDF</span>
+            </div>
+          </div>
+          <a class="btn" href="PON_AQUI_LA_URL_DEL_PDF_5" target="_blank">
+            ⬇️ Descargar
+          </a>
+        </div>
+
+      </div>
+
+      <p class="note">Nota: si no se abre un archivo, verifica que esté cargado en el contenedor <b>pdfs</b> y que el nombre coincida con la URL.</p>
+    </div>
+
+    <div class="footer">
+      Hecho con Azure Static Web Apps + Azure Blob Storage (modo económico).
+    </div>
+  </div>
 </body>
 </html>
